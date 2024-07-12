@@ -1,0 +1,19 @@
+[package]
+name = "winctl"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "*", features = ["derive"] }
+com-policy-config = "*"
+windows = { version = "*", features = [
+	"Win32_Devices_Display",
+	"Win32_Foundation",
+] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+panic = "abort"
+strip = true
