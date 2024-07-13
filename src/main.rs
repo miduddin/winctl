@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use clap::{Parser, Subcommand, ValueEnum};
 use com_policy_config::{IPolicyConfig, PolicyConfigClient};
 use windows::core::{Result, PCWSTR};
