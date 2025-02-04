@@ -1,6 +1,7 @@
 #![windows_subsystem = "windows"]
 
 use clap::{Parser, Subcommand, ValueEnum};
+mod com_policy_config;
 use com_policy_config::{IPolicyConfig, PolicyConfigClient};
 use windows::core::{Result, PCWSTR};
 use windows::Win32::Devices::Display::{
@@ -58,7 +59,7 @@ fn set_display(topology: DisplayTopology) {
 
 fn set_audio(device_index: u32) -> Result<()> {
     unsafe {
-        CoInitializeEx(None, COINIT_MULTITHREADED)?;
+        let _ = CoInitializeEx(None, COINIT_MULTITHREADED);
 
         let enumerator: IMMDeviceEnumerator =
             CoCreateInstance(&MMDeviceEnumerator, None, CLSCTX_ALL)?;
