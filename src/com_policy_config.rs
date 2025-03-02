@@ -9,10 +9,9 @@
 use std::ffi::c_void;
 use std::mem::zeroed;
 use windows::core::imp::CanInto;
-use windows::core::Type;
-use windows::core::{IUnknown, Interface, Param, Result, GUID, HRESULT, PCWSTR};
+use windows::core::{IUnknown, Interface, Param, Result, Type, BOOL, GUID, HRESULT, PCWSTR};
 use windows::Devices::Custom::DeviceSharingMode;
-use windows::Win32::Foundation::{BOOL, PROPERTYKEY};
+use windows::Win32::Foundation::PROPERTYKEY;
 use windows::Win32::Media::Audio::{ERole, WAVEFORMATEX};
 use windows::Win32::System::Com::StructuredStorage::PROPVARIANT;
 
